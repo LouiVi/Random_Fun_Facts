@@ -2,11 +2,11 @@ cfg.Light, cfg.Portrait, cfg.Fast, cfg.Share, cfg.MUI
 app.LoadPlugin( "Utils" );
 app.LoadPlugin( "Support" );
 
-//var address = "http://www.randomfunfacts.com";
+var address = "http://www.randomfunfacts.com";
 //var address = "http://www.randominsults.net/";
 //var address = "http://www.randomriddles.com/";
 //var address = "http://www.quotability.com/";
-address = "http://www.randomfunnyjokes.com/";
+//address = "http://www.randomfunnyjokes.com/";
 var fonts = ["Misc/Crushed-Regular.ttf","Misc/DancingScript-VariableFont_wght.ttf","Misc/Jersey10Charted-Regular.ttf","Misc/LuckiestGuy-Regular.ttf","Misc/MontserratAlternates-ExtraLight.ttf","Misc/RubikDoodleShadow-Regular.ttf"];
 var animations = app.CreateSupport().AnimationManager().keys;
 var animLength = animations.length;

@@ -20,12 +20,14 @@ function OnStart()
 	//Create a layout with objects vertically centered.
 	lay = app.CreateLayout( "Linear", "Top,FillXY" );
 	rColor = utils.RandomHexColor(false);
+	app.SetStatusBarColor(  rColor)
+	app.SetNavBarColor( rColor )
 CreateActionBar();
 CreateMenuBar(rColor);
 	//Create a text label and add it to layout.
 	txt = app.CreateText( "", 1, 0.8, "Multiline,VCenter,AutoShrinhk" )
-	txt.SetTextSize( 54, "dip")
-	txt.SetTextShadow( 5, 2, 2, "#000000" );
+	txt.SetTextSize( 38, "dip")
+	txt.SetTextShadow( 7, 2, 2, "#000000" );
 	lay.AddChild( txt )
 	
 	//Add layout to app.	
@@ -64,6 +66,12 @@ txt.Hide();
         txt.SetFontFile( fonts[utils.RandomIntegerRange(0,6)] );
         txt.SetTextColor( utils.RandomHexColor(false) );
         txt.SetHtml( funfact );
+        /*alert(funfact.length);
+        switch (funfact.length){
+        case 100:
+        txt.SetTextSize( 38 );
+        break;
+        }*/
         txt.Animate( GetRandomAnim());
         //Speak the text at default pitch and speed.
 	var pitch = 1.0, speed = 1.0;

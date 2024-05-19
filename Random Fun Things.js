@@ -7,10 +7,10 @@ var address = "http://www.randomfunfacts.com";
 //var address = "http://www.randomriddles.com/";
 //var address = "http://www.quotability.com/";
 //address = "http://www.randomfunnyjokes.com/";
-var fonts = ["Misc/Crushed-Regular.ttf","Misc/DancingScript-VariableFont_wght.ttf","Misc/Jersey10Charted-Regular.ttf","Misc/LuckiestGuy-Regular.ttf","Misc/MontserratAlternates-ExtraLight.ttf","Misc/RubikDoodleShadow-Regular.ttf"];
+var fonts = ["Misc/Danfo-Regular-VariableFont_ELSH.ttf","Misc/Audiowide-Regular.ttf","Misc/Crushed-Regular.ttf","Misc/DancingScript-VariableFont_wght.ttf","Misc/Jersey10Charted-Regular.ttf","Misc/LuckiestGuy-Regular.ttf","Misc/MontserratAlternates-ExtraLight.ttf"];
 var animations = app.CreateSupport().AnimationManager().keys;
 var animLength = animations.length;
-
+var tvar ="";
 //Called when application is started.
 function OnStart()
 {
@@ -39,7 +39,7 @@ CreateMenuBar(rColor);
 function GetRandomAnim()
 {
 	gra = animations[utils.RandomIntegerRange(0, animLength)];
-	//app.ShowPopup( gra );
+	app.ShowPopup( "Animation: "+gra + tvar);
 	if(gra.includes("out") || gra.includes("Out") || gra.includes("Slide")) {
 		return GetRandomAnim();
 	} else {
@@ -63,8 +63,11 @@ txt.Hide();
     {
         var funfact = reply.slice( reply.indexOf("<i>") + 3, reply.indexOf("</i>") );
         //alert( funfact );
-        txt.SetFontFile( fonts[utils.RandomIntegerRange(0,6)] );
-        txt.SetTextColor( utils.RandomHexColor(false) );
+        f = fonts[utils.RandomIntegerRange(0,fonts.length)];
+        //app.ShowPopup( )
+        tvar = "\r\nFont selected: "+ f;
+        txt.SetFontFile( f );
+        txt.SetTextColor( "#ffffff");//utils.RandomHexColor(false) );
         txt.SetHtml( funfact );
         /*alert(funfact.length);
         switch (funfact.length){
